@@ -1,0 +1,27 @@
+---
+  - name: Remove Elk VM with Docker
+    hosts: elk
+    remote_user: azureuser
+    become: True
+    tasks:
+    - name: change the memory on the elk vm
+      command: sysctl -w vm.max_map_count=262144
+    - name: install docker.io
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        name: docker.io
+        state: absent
+    - name: install pip3
+      apt:
+        name: python3-pip
+        state: absent
+    - name: install docker module
+      pip:
+        name: docker
+        state: absent
+    - name: download and launch a docker elk container
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        state: absent
