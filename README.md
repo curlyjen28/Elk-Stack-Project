@@ -8,10 +8,10 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
- [filebeatplaybook.yml](https://github.com/curlyjen28/Project-1/blob/main/Ansible/filebeatplaybook.yml)
+- [Filebeat Playbook](https://github.com/curlyjen28/Project-1/blob/main/Ansible/filebeatplaybook.yml)
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -23,10 +23,10 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly reliable, in addition to restricting access to the network.
+- Load balancers mitigate Denial of Service (DoS) attacks by providing a website with an external IP address that is accessed by the Internet. The load balancer receives   incoming traffic that comes into the website and distributes it across multiple servers. This helps distribute traffic evenly among servers while mitigating DoS           attacks. A jump box is a secure computer that administrators must first connect to before launching any administrative tasks or connecting to other servers. This is       advantageous because it protects virtual machines from public access. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system performance. 
 - _TODO: What does Filebeat watch for?_
 - _TODO: What does Metricbeat record?_
 
