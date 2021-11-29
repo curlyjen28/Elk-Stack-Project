@@ -30,8 +30,9 @@ Load balancing ensures that the application will be highly reliable, in addition
   access. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system performance. 
-- Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. 
-- Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
+- Filebeat monitors the log files or locations that you specify, including which files have changed and when. It forwards these logs to Elasticsearch or Logstash for   
+  indexing. 
+- Metricbeat is a lightweight shipped that can be installed on servers to periodically collect metrics from the operating system and from services running on the server.   It then takes the collected metrics and statistics and ships them to the either Elasticsearch or Logstash. 
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -39,7 +40,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
+| DVWA-VM1 |          |            |                  |
 | TODO     |          |            |                  |
 | TODO     |          |            |                  |
 
