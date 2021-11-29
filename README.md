@@ -32,7 +32,7 @@ Load balancing ensures that the application will be highly reliable, in addition
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system performance. 
 - Filebeat monitors the log files or locations that you specify, including which files have changed and when. It forwards these logs to Elasticsearch or Logstash for   
   indexing. 
-- Metricbeat is a lightweight shipped that can be installed on servers to periodically collect metrics from the operating system and from services running on the server.   It then takes the collected metrics and statistics and ships them to the either Elasticsearch or Logstash. 
+- Metricbeat is a lightweight shipped that can be installed on servers to periodically collect metrics from the operating system and from services running on the server.   It then takes the collected metrics and statistics and ships them to either Elasticsearch or Logstash. 
 
 The configuration details of each machine may be found below.
 
@@ -59,19 +59,25 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| JumpBoxProvisioner | Yes       |  173.49.243.247      |
+|  Web-1             |  No       |    10.0.0.4          |
+|  Web-2             |  No       |    10.0.0.4          |
+|  Web-3             |  No       |    10.0.0.4          |
+|  ELK1              |  No       |    10.0.0.4          |
+|  Red-Team-LB       | Yes       |  173.49.243.247      |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- Manual configuration allows for potential human errors during deployment; whereas, automated deployments are tested for errors before being deployed.
+- A single or multiple virtual machines can be deployed efficiently. 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Sets the remote user used to deploy the ELK Stack
+- Installs docker.io
+- Installs pip3
+- Downloads, launches, and configures a docker ELK container
+- Starts the docker service
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -79,25 +85,27 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- 10.0.0.5
+- 10.0.0.6
+- 10.0.0.8
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat monitors the log files or locations that you specify, including which files have changed and when. It forwards these logs to Elasticsearch or Logstash for   
+  indexing. 
+- Metricbeat takes the metrics and statistics that it collects and ships them to ELK. Metricbeat helps you monitor your servers by collecting metrics from the system and   services running on the server. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the Playbook file to Ansible.
+- Update the hosts file to include the Webservers IP Addresses and ELKServer IP to the appropriate groups. 
+- Run the playbook, and navigate to the Kibana page at[ELK public IP]/app/kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
