@@ -49,7 +49,7 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - host public IP (personal machine's IP - redacted for security purposes)
 
-Machines within the network can only be accessed by the Ansible Container running on the Jump Box.
+Machines within the network can only be accessed by the Ansible Container running on the Jump Box via the SSH protocol running on port 22.
 - JumpBoxProvisioner, 10.0.0.4
 
 
