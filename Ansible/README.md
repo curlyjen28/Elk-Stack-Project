@@ -1,4 +1,4 @@
-# README - Ansible Files
+# Ansible Files
 
 The following files are used to deploy the ELK Container and monitor the web servers using filebeat and metricbeat
 
@@ -13,4 +13,4 @@ The following files are used to deploy the ELK Container and monitor the web ser
 - remove-elk.yml: Uses Ansible to remove the ELK Stack (if needed)
 
 
-### Sub Titles
+
