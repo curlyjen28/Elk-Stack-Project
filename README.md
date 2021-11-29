@@ -24,11 +24,14 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly reliable, in addition to restricting access to the network.
-- Load balancers mitigate Denial of Service (DoS) attacks by providing a website with an external IP address that is accessed by the Internet. The load balancer receives   incoming traffic that comes into the website and distributes it across multiple servers. This helps distribute traffic evenly among servers while mitigating DoS           attacks. A jump box is a secure computer that administrators must first connect to before launching any administrative tasks or connecting to other servers. This is       advantageous because it protects virtual machines from public access. 
+- Load balancers mitigate Denial of Service (DoS) attacks by providing a website with an external IP address that is accessed by the Internet. The load balancer receives   incoming traffic that comes into the website and distributes it across multiple servers. This helps distribute traffic evenly among servers while mitigating DoS           attacks. 
+
+- A jump box is a secure computer that is only accessible by an administrator and it is only used for administrative tasks. If configured correctly, a jump box allows for   tighter security because it is a single point of access used for a single purpose. This is advantageous because it protects virtual machines from public 
+  access. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system performance. 
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. 
+- Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
