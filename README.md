@@ -38,21 +38,22 @@ The configuration details of each machine may be found below.
 
 |   Name   |  Function        | IP Address              | Operating System |
 |----------|------------------|-------------------------|------------------|
-| Jump Box | Gateway          | 10.0.0.4/20.84.19.101   | Linux            |
-| Web-1    |VM/DVWA Container | 10.0.0.5                | Linux            |
-| Web-2    |VM/DVWA Container | 10.0.0.6                | Linux            |
-| Web-3    |VM/DVWA Container | 10.0.0.8                | Linux            |
-| ELK1     | ELK Server       | 10.1.0.4/20.114.213.58  | Linux            |
+| JumpBoxProvisioner | Gateway          | 10.0.0.4/20.84.19.101   | Linux            |
+| Web-1              |VM/DVWA Container | 10.0.0.5                | Linux            |
+| Web-2              |VM/DVWA Container | 10.0.0.6                | Linux            |
+| Web-3              |VM/DVWA Container | 10.0.0.8                | Linux            |
+| ELK1               | ELK Server       | 10.1.0.4/20.114.213.58  | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+- 173.49.243.247
 
-Machines within the network can only be accessed by Port 22.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the Ansible Container running on the Jump Box.
+- JumpBoxProvisioner, 10.0.0.4
+
 
 A summary of the access policies in place can be found in the table below.
 
