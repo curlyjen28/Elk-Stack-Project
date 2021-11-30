@@ -2,10 +2,18 @@
 
 ## 
 
-The files in this repository were used to configure the network depicted below. This diagram represents a virtual network with including ELK Deployment, as well as security group rules for the ELK Security Group (ELK1-nsg) and the Red Team Security Group (RedTeamNSG).  
+The files in this repository were used to configure the network depicted below. 
+
+- Diagram of virtual network including ELK Deployment. 
 
 ![Virtual Network Diagram with ELK Deployment](https://github.com/curlyjen28/Project-1/blob/main/Diagrams/FinalDiagram.png)
+
+- Diagram of security group rules for the ELK Security Group (ELK1-nsg)
+
 ![Elk Security Group Rules](https://github.com/curlyjen28/Project-1/blob/main/Diagrams/ELK1-nsgSecurity-Group-Rules.JPG)
+
+- Diagram of security group rules for Red Team Security Group (RedTeamNSG)
+-
 ![Red Team Security Group Rules](https://github.com/curlyjen28/Project-1/blob/main/Diagrams/RedTeamNSGSecurity-Group-Rules.JPG)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Playbook File may be used to install only certain pieces of it, such as Filebeat.
