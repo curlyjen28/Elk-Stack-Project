@@ -29,12 +29,12 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly reliable, in addition to restricting access to the network.
-- Load balancers mitigate Denial of Service (DoS) attacks by providing a website with an external IP address that is accessed by the Internet. The load balancer receives incoming traffic that comes into the website and distributes it across multiple servers. This helps distribute traffic evenly among servers while mitigating DoS         attacks. 
+- Load balancers mitigate Denial of Service (DoS) attacks by providing a website with an external IP address that is accessed by the Internet. The load balancer receives incoming traffic that comes into the website and distributes it across multiple servers. This helps distribute traffic evenly among servers while mitigating DoS attacks. 
 
 - A jump box is a secure computer that is only accessible by an administrator and it is only used for administrative tasks. If configured correctly, a jump box allows for tighter security because it is a single point of access used for a single purpose. This is advantageous because it protects virtual machines from public access. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system performance. 
-- Filebeat monitors the log files or locations that you specify, including which files have changed and when. It forwards these logs to Elasticsearch or Logstash for   indexing. 
+- Filebeat monitors the log files or locations that you specify, including which files have changed and when. It forwards these logs to Elasticsearch or Logstash for indexing. 
 - Metricbeat is a lightweight shipper that can be installed on servers to periodically collect metrics from the operating system and from services running on the server. It then takes the collected metrics and statistics and ships them to either Elasticsearch or Logstash. 
 
 The configuration details of each machine may be found below.
@@ -138,7 +138,7 @@ SSH into the control node and follow the steps below:
 - Copy the playbook file to /etc/ansible/files
 - Update the hosts.yml file to include the Webservers IP Addresses and ELKServer IP to the appropriate groups. 
 - Copy filebeatplaybook.yml to /etc/ansible/roles. Navigate to the Kibana page at [ELK public IP]/app/kibana to check that the installation worked as expected.
-- Install-elk.yml copied to /etc/ansible directory to run
+- Installelk.yml copied to /etc/ansible directory to run
 - Edit hosts.yml file to identify the correct machine to run the playbook on by specifying the IP addresses in their appropriate groups
 - http://20.114.213.58:5601/app/kibana
 
@@ -150,10 +150,10 @@ More specific commands and instructions on how to download the playbook, update 
 - Add the ELK Server IP followed by ansible_python_interpreter=/usr/bin/python3 under [ELKServers] group
 - Save the hosts file: ctrl-x, Y to save, Enter to save as the hosts filename
 - Make sure you are in the directory that install-elk.yml is in: cd/etc/ansible
-- Edit install-elk-yml: nano install-elk.yml
+- Edit installelk-yml: nano installelk.yml
 - Make sure the install-elk.yml file matches the one attached to this repository 
-- Save the yml file: ctrl-x, Y to save, Enter to save as the install-elk.yml filename
-- Install ELK using playbook: ansible-playbook install-elk.yml
+- Save the yml file: ctrl-x, Y to save, Enter to save as the installelk.yml filename
+- Install ELK using playbook: ansible-playbook installelk.yml
 - Edit the filebeat-config.yml and metricbeat-config.yml files to point to your ELK Stack
 - nano filebeat-config.yml
 - nano metricbeat-config.yml
