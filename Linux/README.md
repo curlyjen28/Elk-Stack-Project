@@ -1,6 +1,6 @@
-# Title
+# README - Linux Scripts
 
-- bullet points
+- sshd_config: the sshd server system-wide configuration file
 - bullet points
 
 
