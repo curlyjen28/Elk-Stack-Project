@@ -11,14 +11,6 @@ The files in this repository were used to configure the network depicted below.
 
 ![Virtual Network Diagram with ELK Deployment](https://github.com/curlyjen28/Project-1/blob/main/Diagrams/FinalDiagram.png)
 
-**Table of security group rules for the ELK Security Group (ELK1-nsg)**
-
-![Elk Security Group Rules](https://github.com/curlyjen28/Elk-Stack-Project/blob/main/Images/ELK1-nsgSecurity-Group-Rules.JPG)
-
-**Table of security group rules for Red Team Security Group (RedTeamNSG)**
-
-![Red Team Security Group Rules](https://github.com/curlyjen28/Elk-Stack-Project/blob/main/Images/RedTeamNSGSecurity-Group-Rules.JPG)
-
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Playbook File may be used to install only certain pieces of it, such as Filebeat.
 
 - [Playbook of YAML Files](https://github.com/curlyjen28/Project-1/tree/main/Ansible)
@@ -63,7 +55,7 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 - host public IP (personal machine's IP - redacted for security purposes)
 
 Machines within the network can only be accessed by the Ansible Container running on the Jump Box via the SSH protocol running on port 22.
-- JumpBoxProvisioner, 10.0.0.4
+- JumpBoxProvisioner, IP 10.0.0.4
 
 
 A summary of the access policies in place can be found in the table below.
@@ -76,6 +68,16 @@ A summary of the access policies in place can be found in the table below.
 |  Web-3             |  No       |    10.0.0.4 (JumpBoxProvisioner)          |
 |  ELK1              |  No       |    10.0.0.4 (JumpBoxProvisioner)         |
 |  Red-Team-LB       | Yes       |host public IP (personal machine's IP - redacted for security purposes)|
+
+Below are what configured Security Group rules will look like in your Azure environment
+
+**Table of security group rules for the ELK Security Group (ELK1-nsg)**
+
+![Elk Security Group Rules](https://github.com/curlyjen28/Elk-Stack-Project/blob/main/Images/ELK1-nsgSecurity-Group-Rules.JPG)
+
+**Table of security group rules for Red Team Security Group (RedTeamNSG)**
+
+![Red Team Security Group Rules](https://github.com/curlyjen28/Elk-Stack-Project/blob/main/Images/RedTeamNSGSecurity-Group-Rules.JPG)
 
 ### Elk Configuration
 
