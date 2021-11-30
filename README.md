@@ -137,7 +137,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the playbook file to /etc/ansible/files
 - Update the hosts.yml file to include the Webservers IP Addresses and ELKServer IP to the appropriate groups. 
-- Copy filebeat-playbook.yml to /etc/ansible/roles. Navigate to the Kibana page at [ELK public IP]/app/kibana to check that the installation worked as expected.
+- Copy filebeatplaybook.yml to /etc/ansible/roles. Navigate to the Kibana page at [ELK public IP]/app/kibana to check that the installation worked as expected.
 - Install-elk.yml copied to /etc/ansible directory to run
 - Edit hosts.yml file to identify the correct machine to run the playbook on by specifying the IP addresses in their appropriate groups
 - http://20.114.213.58:5601/app/kibana
@@ -159,13 +159,13 @@ More specific commands and instructions on how to download the playbook, update 
 - nano metricbeat-config.yml
 - Save the two files: ctrl-x, Y to save, Enter to save as the appropriate filename
 - Create the two playbooks
-- nano filebeat-playbook.yml
-- nano metricbeat-playbook.yml
+- nano filebeatplaybook.yml
+- nano metricbeatplaybook.yml
 - Make sure the playbooks are configured like the two attached files in the repository
 - Save the two files: ctrl-x, Y to save, Enter to save as the appropriate filename
 - Run the playbooks
-- ansible-playbook filebeat-playbook.yml
-- ansible-playbook metricbeat-playbook.yml
+- ansible-playbook filebeatplaybook.yml
+- ansible-playbook metricbeatplaybook.yml
 - Confirm that they are both sending data to ELK
 - Connect to Kibana: http://20.114.213.58:5601/app/kibana
 - Click Add Log Data 
