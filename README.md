@@ -142,4 +142,37 @@ SSH into the control node and follow the steps below:
 - Edit hosts.yml file to identify the correct machine to run the playbook on by specifying the IP addresses in their appropriate groups
 - http://20.114.213.58:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+More specific commands and instructions on how to download the playbook, update the files and more can be found below:
+- Set your Azure VM username: remote_user = azureuser
+- Save the config file: ctrl-x, Y to save, Enter to save as the ansible.cfg filename
+- Edit the hosts file: nano hosts
+- Add the webserver IPs followed by ansible_python_interpreter=/usr/bin/python3 under [Webservers] group
+- Add the ELK Server IP followed by ansible_python_interpreter=/usr/bin/python3 under [ELKServers] group
+- Save the hosts file: ctrl-x, Y to save, Enter to save as the hosts filename
+- Make sure you are in the directory that install-elk.yml is in: cd/etc/ansible
+- Edit install-elk-yml: nano install-elk.yml
+- Make sure the install-elk.yml file matches the one attached to this repository 
+- Save the yml file: ctrl-x, Y to save, Enter to save as the install-elk.yml filename
+- Install ELK using playbook: ansible-playbook install-elk.yml
+- Edit the filebeat-config.yml and metricbeat-config.yml files to point to your ELK Stack
+- nano filebeat-config.yml
+- nano metricbeat-config.yml
+- Save the two files: ctrl-x, Y to save, Enter to save as the appropriate filename
+- Create the two playbooks
+- nano filebeat-playbook.yml
+- nano metricbeat-playbook.yml
+- Make sure the playbooks are configured like the two attached files in the repository
+- Save the two files: ctrl-x, Y to save, Enter to save as the appropriate filename
+- Run the playbooks
+- ansible-playbook filebeat-playbook.yml
+- ansible-playbook metricbeat-playbook.yml
+- Confirm that they are both sending data to ELK
+- Connect to Kibana: http://20.114.213.58:5601/app/kibana
+- Click Add Log Data 
+- Click System Logs
+- Scroll to the bottom and click Check data 
+- Make sure "Data successfully received from this module" is shown
+- Scroll back up to Add Data to Kibana. 
+- Click on the Metrics Tab. 
+- Click Docker Metrics. Scroll to the bottom and click Check data
+- Make sure "Data successfully received from this module" is shown
