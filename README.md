@@ -110,7 +110,7 @@ These Beats allow us to collect the following information from each machine:
 - Filebeat monitors the log files or locations that you specify, including which files have changed and when. It forwards these logs to Elasticsearch or Logstash for   indexing. 
 - Metricbeat takes the metrics and statistics that it collects and ships them to ELK. Metricbeat helps you monitor your servers by collecting metrics from the system and services running on the server. 
 
-### KIBANA
+### Kibana
 
 After adding sample web log data to kibana, the following information was obtained:
 - In the last 7 days, 224 unique visitors were located in India.
