@@ -1,18 +1,21 @@
-# 
-Automated ELK Stack Deployment
-## 
+##
+### AUTOMATED ELK STACK DEPLOYMENT
+##
+
+
+
 
 The files in this repository were used to configure the network depicted below. 
 
-- **Diagram of virtual network including ELK Deployment** 
+**Diagram of virtual network including ELK Deployment** 
 
 ![Virtual Network Diagram with ELK Deployment](https://github.com/curlyjen28/Project-1/blob/main/Diagrams/FinalDiagram.png)
 
-- **Diagram of security group rules for the ELK Security Group (ELK1-nsg)**
+**Table of security group rules for the ELK Security Group (ELK1-nsg)**
 
 ![Elk Security Group Rules](https://github.com/curlyjen28/Project-1/blob/main/Diagrams/ELK1-nsgSecurity-Group-Rules.JPG)
 
-- **Diagram of security group rules for Red Team Security Group (RedTeamNSG)**
+**Table of security group rules for Red Team Security Group (RedTeamNSG)**
 
 ![Red Team Security Group Rules](https://github.com/curlyjen28/Project-1/blob/main/Diagrams/RedTeamNSGSecurity-Group-Rules.JPG)
 
@@ -112,7 +115,8 @@ SSH into the control node and follow the steps below:
 - Copy the Playbook file to Ansible.
 - Update the hosts file to include the Webservers IP Addresses and ELKServer IP to the appropriate groups. 
 - Run the playbook, and navigate to the Kibana page at[ELK public IP]/app/kibana to check that the installation worked as expected.
-
-
+- Install-elk.yml copied to /etc/ansible directory to run
+- Edit hosts.yml file to identify the correct machine to run the playbook on by specifying the IP addresses in their appropriate groups
+- http://20.114.213.58:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
