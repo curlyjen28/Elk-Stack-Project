@@ -150,8 +150,8 @@ More specific commands and instructions on how to download the playbook, update 
 - Add the ELK Server IP followed by ansible_python_interpreter=/usr/bin/python3 under [ELKServers] group
 - Save the hosts file: ctrl-x, Y to save, Enter to save as the hosts filename
 - Make sure you are in the directory that install-elk.yml is in: cd/etc/ansible
-- Edit installelk-yml: nano installelk.yml
-- Make sure the install-elk.yml file matches the one attached to this repository 
+- Edit installelk.yml: nano installelk.yml
+- Make sure the installelk.yml file matches the one attached to this repository 
 - Save the yml file: ctrl-x, Y to save, Enter to save as the installelk.yml filename
 - Install ELK using playbook: ansible-playbook installelk.yml
 - Edit the filebeat-config.yml and metricbeat-config.yml files to point to your ELK Stack
