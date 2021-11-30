@@ -9,4 +9,3 @@ The following scripts were written and utilized in the Linux and Bash Units of c
 - systemscriptweek5.sh: script from week 5 homework
 
 
-### Sub Titles
